@@ -67,8 +67,8 @@ const ClientDashboardMobile: React.FC = () => {
       <div className="absolute top-20 left-10 w-64 h-64 bg-barber-gold/10 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-barber-copper/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       
-      <div className="w-full px-4 pt-6 pb-24 space-y-6 relative z-10">
-        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 shadow-barber-xl border border-barber-gold/20  animate-fade-in-up">
+      <div className="w-full px-3 sm:px-4 pt-12 pb-24 space-y-4 relative z-10">
+        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 shadow-barber-xl border border-barber-gold/20  animate-fade-in-up">
           <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
           <div className="relative z-10">
             <div className="flex items-center justify-between">
@@ -84,15 +84,15 @@ const ClientDashboardMobile: React.FC = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-2 gap-4 mb-2">
-          <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl p-4 text-center shadow-barber-xl border border-barber-gold/20 ">
+        <div className="grid grid-cols-2 gap-3 mb-2">
+          <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl p-3 text-center shadow-barber-xl border border-barber-gold/20 ">
             <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
             <div className="relative z-10">
               <div className="text-2xl font-bold text-barber-cream font-display">{clientStats.totalAppointments}</div>
               <div className="text-sm text-barber-cream/60 font-body">Citas</div>
             </div>
           </div>
-          <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl p-4 text-center shadow-barber-xl border border-barber-gold/20 ">
+          <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl p-3 text-center shadow-barber-xl border border-barber-gold/20 ">
             <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
             <div className="relative z-10">
               <div className="text-2xl font-bold text-barber-cream font-display">{clientStats.completedServices}</div>
@@ -102,7 +102,7 @@ const ClientDashboardMobile: React.FC = () => {
         </div>
         
         {/* Botón de Agendar Citas */}
-        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl p-6 shadow-barber-xl border border-barber-gold/20  mb-4">
+        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl p-4 shadow-barber-xl border border-barber-gold/20  mb-4">
           <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
           <div className="relative z-10 text-center">
             <div className="flex items-center justify-center space-x-3 mb-4">
@@ -125,7 +125,7 @@ const ClientDashboardMobile: React.FC = () => {
           </div>
         </div>
         
-        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 shadow-barber-xl border border-barber-gold/20 ">
+        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-4 shadow-barber-xl border border-barber-gold/20 ">
           <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
           <div className="relative z-10">
             <h2 className="text-lg font-semibold text-barber-cream font-display mb-4 flex items-center space-x-2">
@@ -133,9 +133,9 @@ const ClientDashboardMobile: React.FC = () => {
               <span>Próximas Citas</span>
             </h2>
             {upcomingAppointments.length > 0 ? (
-              <div className="space-y-3">
+              <div className="space-y-2">
                 {upcomingAppointments.map((appointment) => (
-                  <div key={appointment.id} className="bg-barber-dark/30 p-3 rounded-lg border border-barber-gold/20">
+                  <div key={appointment.id} className="bg-barber-dark/30 p-2 rounded-lg border border-barber-gold/20">
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-sm font-medium text-barber-cream">{appointment.service}</p>
