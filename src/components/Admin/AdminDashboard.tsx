@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, DollarSign, Users, Clock, TrendingUp, CheckCircle, AlertCircle, Crown, Sparkles, Star, BarChart3 } from 'lucide-react';
 import { useAppointments } from '../../context/AppointmentContext';
-import NotificationTest from './NotificationTest';
-import NotificationSettings from './NotificationSettings';
 import AppointmentCompletionService from '../../services/appointmentCompletionService';
-import pushNotificationService from '../../services/pushNotificationService';
 import { getTodayString, createLocalDate, isPastDate, isToday as isTodayDate, isFutureDate } from '../../utils/dateUtils';
 
 const BarberPole = () => (
@@ -17,19 +14,6 @@ const AdminDashboard: React.FC = () => {
   const { appointments } = useAppointments();
   const [selectedDate, setSelectedDate] = useState(getTodayString());
 
-  // Inicializar servicio de notificaciones push
-  useEffect(() => {
-    const initializeNotifications = async () => {
-      try {
-        await pushNotificationService.initialize();
-        console.log('✅ Servicio de notificaciones push inicializado');
-      } catch (error) {
-        console.warn('⚠️ Error inicializando notificaciones push:', error);
-      }
-    };
-
-    initializeNotifications();
-  }, []);
 
   // Calculate statistics
   const today = getTodayString();
@@ -460,15 +444,6 @@ const AdminDashboard: React.FC = () => {
           </div>
         </div>
 
-        {/* Notification Settings */}
-        <div className="mt-6 sm:mt-8">
-          <NotificationSettings />
-        </div>
-
-        {/* Notification Test */}
-        <div className="mt-6 sm:mt-8">
-          <NotificationTest />
-        </div>
 
         {/* Recently Completed Appointments */}
         {recentlyCompleted.length > 0 && (
