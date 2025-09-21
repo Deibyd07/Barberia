@@ -242,7 +242,7 @@ const ClientAppointments: React.FC = () => {
       <div className="absolute top-20 left-10 w-64 h-64 bg-barber-gold/10 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-barber-copper/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       
-      <div className="max-w-4xl mx-auto px-4 py-8 pb-24 relative z-10">
+      <div className="max-w-4xl mx-auto px-3 sm:px-4 pt-12 pb-24 relative z-10">
         {/* Header simplificado */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-6">
