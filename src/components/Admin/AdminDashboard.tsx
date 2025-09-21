@@ -150,9 +150,9 @@ const AdminDashboard: React.FC = () => {
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-barber-copper/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-barber-gold/5 to-transparent rounded-full animate-pulse-slow"></div>
       
-      <div className="container-barber py-4 sm:py-8 px-2 sm:px-4 relative z-10">
+      <div className="container-barber py-2 sm:py-4 lg:py-8 px-2 sm:px-4 relative z-10">
         {/* Header */}
-        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-6 lg:p-8 text-barber-gold mb-4 sm:mb-6 lg:mb-10 shadow-barber-xl border border-barber-gold/20 overflow-hidden animate-fade-in-up">
+        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 text-barber-gold mb-3 sm:mb-4 lg:mb-6 shadow-barber-xl border border-barber-gold/20 overflow-hidden animate-fade-in-up">
           <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
           <div className="absolute top-2 right-2 sm:top-4 sm:right-4">
             <div className="flex space-x-1 sm:space-x-2">
@@ -173,14 +173,14 @@ const AdminDashboard: React.FC = () => {
                 </div>
               </div>
               <div>
-                        <h1 className="text-xl sm:text-3xl lg:text-5xl font-display font-bold mb-1 sm:mb-2 tracking-wide">
+                        <h1 className="text-lg sm:text-2xl lg:text-4xl xl:text-5xl font-display font-bold mb-1 sm:mb-2 tracking-wide">
                           <span className="text-barber-cream">
                             Panel Administrativo
                           </span>
                         </h1>
-                <div className="flex items-center justify-center space-x-2">
+                <div className="flex items-center justify-center space-x-1 sm:space-x-2">
                   <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-barber-gold animate-pulse" />
-                  <p className="text-barber-cream/90 text-xs sm:text-base lg:text-lg font-body">
+                  <p className="text-barber-cream/90 text-xs sm:text-sm lg:text-base font-body">
                     Control total de tu barbería premium
                   </p>
                   <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-barber-gold animate-pulse" style={{ animationDelay: '0.5s' }} />
@@ -191,13 +191,13 @@ const AdminDashboard: React.FC = () => {
         </div>
         
         {/* Stats Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
                   <div
                     key={index}
-                    className="group relative bg-gradient-to-br from-barber-black via-barber-dark to-barber-charcoal backdrop-blur-md rounded-xl sm:rounded-2xl shadow-barber-xl p-4 sm:p-6 lg:p-8 border border-barber-gold/30 hover:shadow-neon-gold transition-all duration-500 transform hover:scale-105 animate-slide-in-left overflow-hidden"
+                    className="group relative bg-gradient-to-br from-barber-black via-barber-dark to-barber-charcoal backdrop-blur-md rounded-lg sm:rounded-xl lg:rounded-2xl shadow-barber-xl p-3 sm:p-4 lg:p-6 border border-barber-gold/30 hover:shadow-neon-gold transition-all duration-500 transform hover:scale-105 animate-slide-in-left overflow-hidden"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
@@ -205,11 +205,11 @@ const AdminDashboard: React.FC = () => {
                       <Sparkles className="h-4 w-4 text-barber-gold/60 animate-pulse" />
                     </div>
                     <div className="relative z-10">
-                      <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center justify-between mb-4 sm:mb-6">
                         <div className="relative">
-                          <div className="absolute inset-0 bg-barber-gold/20 rounded-2xl blur-lg animate-glow"></div>
-                          <div className={`relative flex items-center justify-center w-16 h-16 bg-gradient-to-r ${stat.color} rounded-2xl shadow-gold-glow transform group-hover:rotate-12 transition-all duration-300`}>
-                            <Icon className="h-8 w-8 text-white group-hover:animate-bounce" />
+                          <div className="absolute inset-0 bg-barber-gold/20 rounded-xl sm:rounded-2xl blur-lg animate-glow"></div>
+                          <div className={`relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r ${stat.color} rounded-xl sm:rounded-2xl shadow-gold-glow transform group-hover:rotate-12 transition-all duration-300`}>
+                            <Icon className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-white group-hover:animate-bounce" />
                           </div>
                         </div>
                         <div className="text-right">
@@ -222,15 +222,15 @@ const AdminDashboard: React.FC = () => {
                         </div>
                       </div>
                       <div>
-                        <p className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-barber-gold mb-2 group-hover:text-barber-copper transition-colors duration-300">
+                        <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-display font-bold text-barber-gold mb-1 sm:mb-2 group-hover:text-barber-copper transition-colors duration-300">
                           {stat.value}
                         </p>
-                        <p className="text-sm sm:text-base lg:text-lg font-medium text-barber-cream mb-3 font-display">
+                        <p className="text-xs sm:text-sm lg:text-base font-medium text-barber-cream mb-2 sm:mb-3 font-display">
                           {stat.title}
                         </p>
                         <div className="flex items-center space-x-2">
-                          <div className={`w-2 h-2 rounded-full ${stat.changeType === 'positive' ? 'bg-green-400' : stat.changeType === 'negative' ? 'bg-red-400' : 'bg-barber-gold'} animate-pulse`}></div>
-                          <p className={`text-sm font-medium font-body ${stat.changeType === 'positive' ? 'text-green-400' : stat.changeType === 'negative' ? 'text-red-400' : 'text-barber-gold/80'}`}>
+                          <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${stat.changeType === 'positive' ? 'bg-green-400' : stat.changeType === 'negative' ? 'bg-red-400' : 'bg-barber-gold'} animate-pulse`}></div>
+                          <p className={`text-xs sm:text-sm font-medium font-body ${stat.changeType === 'positive' ? 'text-green-400' : stat.changeType === 'negative' ? 'text-red-400' : 'text-barber-gold/80'}`}>
                             {stat.change}
                           </p>
                         </div>

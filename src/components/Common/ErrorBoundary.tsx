@@ -36,7 +36,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 const ErrorFallback: React.FC<{ error?: Error }> = ({ error }) => {
   const location = useLocation();
   
-  // Si estamos en una ruta que debería existir, redirigir
+  // Redirigir inmediatamente sin mostrar mensaje
   React.useEffect(() => {
     if (location.pathname.startsWith('/admin')) {
       window.location.href = '/admin/dashboard';
@@ -47,21 +47,8 @@ const ErrorFallback: React.FC<{ error?: Error }> = ({ error }) => {
     }
   }, [location.pathname]);
 
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-2xl font-bold text-gray-900 mb-4">
-          Redirigiendo...
-        </h1>
-        <p className="text-gray-600">
-          Si no eres redirigido automáticamente, 
-          <a href="/" className="text-blue-600 hover:underline ml-1">
-            haz clic aquí
-          </a>
-        </p>
-      </div>
-    </div>
-  );
+  // No mostrar nada, solo redirigir
+  return null;
 };
 
 export default ErrorBoundary;
