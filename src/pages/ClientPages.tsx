@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import PageTransition from '../components/Common/PageTransition';
 import ClientDashboardResponsive from '../components/Client/ClientDashboardResponsive';
 import BookingPage from '../components/Client/BookingPage';
@@ -8,6 +8,7 @@ import ClientAppointments from '../components/Client/ClientAppointments';
 const ClientPages: React.FC = () => {
   return (
     <Routes>
+      <Route path="/" element={<Navigate to="/client/dashboard" replace />} />
       <Route path="/dashboard" element={
         <PageTransition>
           <ClientDashboardResponsive />
@@ -23,6 +24,7 @@ const ClientPages: React.FC = () => {
           <ClientAppointments />
         </PageTransition>
       } />
+      <Route path="*" element={<Navigate to="/client/dashboard" replace />} />
     </Routes>
   );
 };

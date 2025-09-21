@@ -37,11 +37,13 @@ const AppContent: React.FC = () => {
       <Routes>
         {user?.role === 'admin' ? (
           <>
+            <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
             <Route path="/admin/*" element={<AdminPages />} />
             <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
           </>
         ) : (
           <>
+            <Route path="/client" element={<Navigate to="/client/dashboard" replace />} />
             <Route path="/client/*" element={<ClientPages />} />
             <Route path="*" element={<Navigate to="/client/dashboard" replace />} />
           </>

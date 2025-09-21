@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import PageTransition from '../components/Common/PageTransition';
 import AdminDashboard from '../components/Admin/AdminDashboard';
 import AppointmentList from '../components/Admin/AppointmentList';
@@ -9,6 +9,7 @@ import ClientManagement from '../components/Admin/ClientManagement';
 const AdminPages: React.FC = () => {
   return (
     <Routes>
+      <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
       <Route path="/dashboard" element={
         <PageTransition>
           <AdminDashboard />
@@ -29,6 +30,7 @@ const AdminPages: React.FC = () => {
           <ClientManagement />
         </PageTransition>
       } />
+      <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
     </Routes>
   );
 };
