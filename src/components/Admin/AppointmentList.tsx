@@ -88,9 +88,9 @@ const AppointmentList: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-barber-black via-barber-dark to-barber-black rounded-2xl shadow-2xl shadow-barber-gold/20 border border-barber-gold/30 glow-border mb-12">
+    <div className="bg-gradient-to-br from-barber-black via-barber-dark to-barber-black rounded-2xl shadow-2xl shadow-barber-gold/20 border border-barber-gold/30 glow-border mb-16 sm:mb-20 mx-2 sm:mx-4">
       {/* Header */}
-      <div className="p-6 border-b border-barber-gold/20 bg-gradient-to-r from-barber-gold/10 to-barber-copper/10">
+      <div className="p-4 sm:p-6 border-b border-barber-gold/20 bg-gradient-to-r from-barber-gold/10 to-barber-copper/10">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
           <div className="flex items-center space-x-3">
             <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-barber-gold to-barber-copper rounded-xl shadow-lg glow-gold animate-pulse-slow">
@@ -130,7 +130,7 @@ const AppointmentList: React.FC = () => {
       </div>
 
       {/* Appointments List */}
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         {filteredAppointments.length === 0 ? (
           <div className="text-center py-16">
             <div className="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-barber-gold/20 to-barber-copper/20 rounded-2xl mx-auto mb-6 border border-barber-gold/30">
@@ -267,7 +267,7 @@ const AppointmentList: React.FC = () => {
             </div>
 
             {/* Mobile Card View */}
-            <div className="lg:hidden space-y-4">
+            <div className="lg:hidden space-y-3">
               {filteredAppointments
                 .sort((a, b) => {
                   const dateA = new Date(`${a.date}T${a.time}`);
@@ -277,10 +277,10 @@ const AppointmentList: React.FC = () => {
                 .map((appointment) => (
                   <div
                     key={appointment.id}
-                    className="bg-gradient-to-br from-barber-dark/50 to-barber-black/50 rounded-xl border border-barber-gold/30 p-4 hover:border-barber-gold/50 transition-all duration-300 hover:scale-[1.02] glow-subtle"
+                    className="bg-gradient-to-br from-barber-dark/50 to-barber-black/50 rounded-xl border border-barber-gold/30 p-3 hover:border-barber-gold/50 transition-all duration-300 hover:scale-[1.02] glow-subtle"
                   >
                     {/* Header with client info and status */}
-                    <div className="flex items-start justify-between mb-3">
+                    <div className="flex items-start justify-between mb-2">
                       <div className="flex items-center space-x-3 flex-1 min-w-0">
                         <User className="h-5 w-5 text-barber-gold animate-pulse flex-shrink-0" />
                         <div className="min-w-0 flex-1">
@@ -302,8 +302,8 @@ const AppointmentList: React.FC = () => {
                     </div>
 
                     {/* Date, time, and service info */}
-                    <div className="grid grid-cols-2 gap-3 mb-3">
-                      <div className="bg-barber-dark/30 p-3 rounded-lg border border-barber-gold/20">
+                    <div className="grid grid-cols-2 gap-2 mb-2">
+                      <div className="bg-barber-dark/30 p-2 rounded-lg border border-barber-gold/20">
                         <div className="flex items-center space-x-2 mb-1">
                           <Calendar className="h-4 w-4 text-barber-gold animate-bounce-slow flex-shrink-0" />
                           <span className="text-xs font-bold text-barber-gold font-barber">Fecha</span>
@@ -312,7 +312,7 @@ const AppointmentList: React.FC = () => {
                           {formatDate(appointment.date)}
                         </p>
                       </div>
-                      <div className="bg-barber-dark/30 p-3 rounded-lg border border-barber-gold/20">
+                      <div className="bg-barber-dark/30 p-2 rounded-lg border border-barber-gold/20">
                         <div className="flex items-center space-x-2 mb-1">
                           <Clock className="h-4 w-4 text-barber-gold animate-spin-slow flex-shrink-0" />
                           <span className="text-xs font-bold text-barber-gold font-barber">Hora</span>
@@ -324,8 +324,8 @@ const AppointmentList: React.FC = () => {
                     </div>
 
                     {/* Service and price */}
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      <div className="bg-barber-dark/30 p-3 rounded-lg border border-barber-gold/20">
+                    <div className="grid grid-cols-2 gap-2 mb-3">
+                      <div className="bg-barber-dark/30 p-2 rounded-lg border border-barber-gold/20">
                         <div className="flex items-center space-x-2 mb-1">
                           <Scissors className="h-4 w-4 text-barber-cream/80 animate-pulse flex-shrink-0" />
                           <span className="text-xs font-bold text-barber-cream/80 font-barber">Servicio</span>
@@ -334,7 +334,7 @@ const AppointmentList: React.FC = () => {
                           {appointment.service}
                         </p>
                       </div>
-                      <div className="bg-barber-dark/30 p-3 rounded-lg border border-barber-gold/20">
+                      <div className="bg-barber-dark/30 p-2 rounded-lg border border-barber-gold/20">
                         <div className="flex items-center space-x-2 mb-1">
                           <Sparkles className="h-4 w-4 text-green-500 animate-pulse flex-shrink-0" />
                           <span className="text-xs font-bold text-green-500 font-barber">Precio</span>
@@ -346,7 +346,7 @@ const AppointmentList: React.FC = () => {
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center justify-center space-x-2 pt-3 border-t border-barber-gold/20">
+                    <div className="flex items-center justify-center space-x-2 pt-2 border-t border-barber-gold/20">
                       <button
                         onClick={() => setSelectedAppointment(appointment)}
                         className="flex-1 p-2 text-barber-gold hover:text-barber-white hover:bg-barber-gold/20 transition-all duration-300 rounded-lg border border-barber-gold/30 hover:border-barber-gold hover:scale-105 hover:glow-subtle text-xs font-barber font-medium"
