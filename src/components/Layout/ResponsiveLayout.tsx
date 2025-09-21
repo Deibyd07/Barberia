@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { useMobileOptimization } from '../../hooks/useMobileOptimization';
 import HeaderMobile from './HeaderMobile';
 import NavigationMobile from './NavigationMobile';
 import Header from './Header';
@@ -12,18 +13,10 @@ interface ResponsiveLayoutProps {
 
 const ResponsiveLayout: React.FC<ResponsiveLayoutProps> = ({ children }) => {
   const { user } = useAuth();
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile } = useMobileOptimization();
 
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
+  // Debug: Log para ver qué está detectando
+  console.log('ResponsiveLayout - isMobile:', isMobile, 'user role:', user?.role);
 
   if (!user) {
     return <>{children}</>;
@@ -31,6 +24,11 @@ const ResponsiveLayout: React.FC<ResponsiveLayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-barber-dark via-barber-slate to-barber-charcoal">
+      {/* Debug visual temporal */}
+      <div className="fixed top-0 left-0 right-0 bg-red-500 text-white p-2 text-xs z-50">
+        DEBUG: isMobile={isMobile ? 'true' : 'false'} | Role={user?.role || 'none'}
+      </div>
+      
       {/* Indicador de progreso de navegación */}
       <NavigationProgress />
       
