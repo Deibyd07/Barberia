@@ -24,11 +24,6 @@ const ResponsiveLayout: React.FC<ResponsiveLayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-barber-dark via-barber-slate to-barber-charcoal">
-      {/* Debug visual temporal */}
-      <div className="fixed top-0 left-0 right-0 bg-red-500 text-white p-2 text-xs z-50">
-        DEBUG: isMobile={isMobile ? 'true' : 'false'} | Role={user?.role || 'none'}
-      </div>
-      
       {/* Indicador de progreso de navegación */}
       <NavigationProgress />
       
