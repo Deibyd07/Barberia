@@ -1,0 +1,140 @@
+/* Z-Index System for Barber Shop App */
+
+/* Base layers */
+:root {
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-modal-backdrop: 40;
+  --z-modal: 50;
+  --z-popover: 60;
+  --z-tooltip: 70;
+  --z-notification: 80;
+  --z-max: 9999;
+}
+
+/* Utility classes for z-index */
+.z-base { z-index: var(--z-base); }
+.z-dropdown { z-index: var(--z-dropdown); }
+.z-sticky { z-index: var(--z-sticky); }
+.z-fixed { z-index: var(--z-fixed); }
+.z-modal-backdrop { z-index: var(--z-modal-backdrop); }
+.z-modal { z-index: var(--z-modal); }
+.z-popover { z-index: var(--z-popover); }
+.z-tooltip { z-index: var(--z-tooltip); }
+.z-notification { z-index: var(--z-notification); }
+.z-max { z-index: var(--z-max); }
+
+/* Specific component z-index fixes */
+.header-mobile {
+  z-index: var(--z-fixed);
+}
+
+.menu-overlay {
+  z-index: var(--z-modal-backdrop);
+}
+
+.menu-sidebar {
+  z-index: var(--z-modal);
+}
+
+.modal-backdrop {
+  z-index: var(--z-modal-backdrop);
+}
+
+.modal-content {
+  z-index: var(--z-modal);
+}
+
+.notification {
+  z-index: var(--z-notification);
+}
+
+/* Ensure proper stacking context */
+.stacking-context {
+  position: relative;
+  z-index: var(--z-base);
+}
+
+/* Fix for mobile menu positioning */
+.mobile-menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-modal);
+}
+
+.mobile-menu-sidebar {
+  position: absolute;
+  top: 4rem; /* Start below header */
+  right: 0;
+  height: calc(100vh - 4rem);
+  width: 20rem;
+  max-width: 85vw;
+  z-index: var(--z-modal);
+}
+
+/* Fix for dropdown positioning */
+.dropdown-container {
+  position: relative;
+  z-index: var(--z-dropdown);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: var(--z-dropdown);
+  margin-top: 0.25rem;
+}
+
+/* Fix for modal positioning */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  position: relative;
+  z-index: var(--z-modal);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Fix for notification positioning */
+.notification-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: var(--z-notification);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .mobile-menu-sidebar {
+    top: 4rem;
+    height: calc(100vh - 4rem);
+  }
+  
+  .modal-container {
+    padding: 0.5rem;
+  }
+  
+  .notification-container {
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+  }
+}

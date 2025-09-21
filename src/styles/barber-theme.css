@@ -1,0 +1,1369 @@
+/* Tema de Barbería - Estilos Globales */
+
+/* Import z-index system */
+@import './z-index.css';
+
+:root {
+  /* Colores principales de barbería */
+  --barber-gold: #D4AF37;
+  --barber-copper: #B87333;
+  --barber-crimson: #DC143C;
+  --barber-red: #8B0000;
+  --barber-dark: #1a1a1a;
+  --barber-slate: #2d2d2d;
+  --barber-charcoal: #3a3a3a;
+  --barber-cream: #f5f5dc;
+  --barber-black: #000000;
+  
+  /* Gradientes */
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #B87333 100%);
+  --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #3a3a3a 100%);
+  --gradient-crimson: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+  
+  /* Sombras */
+  --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+  --shadow-neon-gold: 0 0 30px rgba(212, 175, 55, 0.5);
+  --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.3);
+  
+  /* Espaciado responsive */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Breakpoints */
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --large: 1280px;
+}
+
+/* Reset y base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: var(--gradient-dark);
+  color: var(--barber-cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Tipografía responsive */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); }
+h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+h4 { font-size: clamp(1.125rem, 2.5vw, 1.5rem); }
+h5 { font-size: clamp(1rem, 2vw, 1.25rem); }
+h6 { font-size: clamp(0.875rem, 1.5vw, 1rem); }
+
+p {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Botones de barbería */
+.btn-barber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-weight: 600;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  min-height: 44px; /* Tamaño mínimo para touch */
+}
+
+.btn-barber-primary {
+  background: var(--gradient-gold);
+  color: var(--barber-black);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-barber-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-neon-gold);
+}
+
+.btn-barber-secondary {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--barber-gold);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.btn-barber-secondary:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--barber-gold);
+}
+
+.btn-barber-danger {
+  background: var(--gradient-crimson);
+  color: var(--barber-cream);
+}
+
+.btn-barber-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(220, 20, 60, 0.3);
+}
+
+/* Cards de barbería */
+.card-barber {
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 1rem;
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-dark);
+  transition: all 0.3s ease;
+}
+
+.card-barber:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Inputs de barbería */
+.input-barber {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: rgba(45, 45, 45, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 0.5rem;
+  color: var(--barber-cream);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  transition: all 0.3s ease;
+  min-height: 44px; /* Tamaño mínimo para touch */
+}
+
+.input-barber:focus {
+  outline: none;
+  border-color: var(--barber-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.input-barber::placeholder {
+  color: rgba(245, 245, 220, 0.5);
+}
+
+/* Grid responsive */
+.grid-responsive {
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid-responsive {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Flex responsive */
+.flex-responsive {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .flex-responsive {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Container responsive */
+.container-barber {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .container-barber {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+/* Navegación móvil */
+.nav-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100vw;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 4px 4px 12px 4px;
+  z-index: 1000;
+  height: auto;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.nav-mobile-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 2px;
+  color: rgba(245, 245, 220, 0.6);
+  text-decoration: none;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Sin hover - eliminado completamente */
+
+/* Eliminar completamente cualquier amarillo en navegación móvil */
+.nav-mobile-item,
+.nav-mobile-item *,
+.nav-mobile-item::before,
+.nav-mobile-item::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.nav-mobile-item.active {
+  color: white !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Estado activo - solo logo blanco */
+.nav-mobile-item.active {
+  color: white !important;
+  background: transparent !important;
+}
+
+/* Estado activo inmediato - sin delays */
+.nav-mobile-item.active {
+  animation: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}
+
+/* Sin fondo - solo logo blanco */
+.nav-mobile-item.active {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Media queries para navegación móvil responsive */
+@media (max-width: 320px) {
+  .nav-mobile {
+    padding: 2px 2px 10px 2px;
+    min-height: 55px;
+  }
+  
+  .nav-mobile-item {
+    padding: 4px 1px;
+    font-size: 0.6rem;
+    gap: 2px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+  .nav-mobile {
+    padding: 4px 4px 12px 4px;
+    min-height: 60px;
+  }
+  
+  .nav-mobile-item {
+    padding: 6px 2px;
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+}
+
+@media (min-width: 481px) {
+  .nav-mobile {
+    padding: 6px 8px 14px 8px;
+    min-height: 65px;
+  }
+  
+  .nav-mobile-item {
+    padding: 8px 4px;
+    font-size: 0.75rem;
+    gap: 5px;
+  }
+}
+
+/* Modal móvil */
+.modal-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+}
+
+.modal-mobile-content {
+  background: var(--gradient-dark);
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+  transform: translateY(100%);
+  animation: slideUp 0.3s ease forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Utilidades responsive */
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+  
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Estados de carga */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--barber-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--barber-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--barber-copper);
+}
+
+/* Patrón de rayas de barbería */
+.bg-barber-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(212, 175, 55, 0.02) 8px,
+    rgba(212, 175, 55, 0.02) 16px
+  );
+  background-size: 32px 32px;
+  background-attachment: fixed;
+  background-repeat: repeat;
+}
+
+/* ===== NAVEGACIÓN PROFESIONAL ===== */
+
+/* Contenedor de transición de página */
+.page-transition-container {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estado de salida de página */
+.page-exiting {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Estado de entrada de página */
+.page-entering {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* ===== MICRO-INTERACCIONES PROFESIONALES ===== */
+
+/* Transiciones suaves para navegación */
+.nav-link-professional {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link-professional::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-link-professional:hover::before {
+  left: 100%;
+}
+
+/* Botones con transiciones profesionales */
+.button-professional {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.button-professional:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
+.button-professional:active {
+  transform: translateY(0);
+  transition: all 0.1s ease;
+}
+
+/* ===== LOADING STATES PROFESIONALES ===== */
+
+/* Skeleton loader sutil */
+.skeleton-loader {
+  background: linear-gradient(90deg, 
+    rgba(212, 175, 55, 0.1) 25%, 
+    rgba(212, 175, 55, 0.2) 50%, 
+    rgba(212, 175, 55, 0.1) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ===== SCROLL SUAVE ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== FOCUS STATES ACCESIBLES ===== */
+
+.focus-visible {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ===== TRANSICIONES DE FORMULARIOS ===== */
+
+/* Transiciones suaves para inputs */
+.form-input {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.form-input:hover {
+  transform: translateY(-0.5px);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2);
+}
+
+/* Transiciones para labels */
+.form-label {
+  transition: all 0.2s ease;
+}
+
+.form-label:hover {
+  color: #d4af37;
+  transform: translateX(2px);
+}
+
+/* Transiciones para botones de formulario */
+.form-button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.form-button:active {
+  transform: translateY(0);
+  transition: all 0.1s ease;
+}
+
+/* Efecto ripple para botones de formulario */
+.form-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.form-button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Transiciones para selects */
+.form-select {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-select:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* Transiciones para textareas */
+.form-textarea {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  resize: vertical;
+}
+
+.form-textarea:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+/* Transiciones para campos de formulario */
+.form-field {
+  transition: all 0.2s ease;
+}
+
+.form-field:hover {
+  transform: translateY(-1px);
+}
+
+/* Transiciones para grupos de formulario */
+.form-group {
+  transition: all 0.3s ease;
+}
+
+.form-group:hover {
+  transform: translateY(-1px);
+}
+
+/* Transiciones para validación */
+.form-error {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.form-success {
+  animation: successPulse 0.6s ease-in-out;
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Transiciones para modales de formulario */
+.form-modal {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-modal-enter {
+  opacity: 0;
+  transform: scale(0.9) translateY(-20px);
+}
+
+.form-modal-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-modal-exit {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.form-modal-exit-active {
+  opacity: 0;
+  transform: scale(0.9) translateY(-20px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* ===== RESPONSIVE TRANSITIONS ===== */
+
+@media (max-width: 768px) {
+  /* Transiciones más sutiles en móvil */
+  .page-transition-container {
+    transition: opacity 0.15s ease-out;
+    transform: none !important;
+  }
+  
+  .page-exiting {
+    opacity: 0;
+    transform: none !important;
+  }
+  
+  .page-entering {
+    opacity: 1;
+    transform: none !important;
+    transition: opacity 0.15s ease-out;
+  }
+  
+  /* Reducir efectos en móvil */
+  .nav-link-professional {
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+  }
+  
+  .nav-link-professional:hover {
+    transform: none;
+  }
+  
+  .button-professional {
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+  }
+  
+  .button-professional:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Desactivar animaciones complejas en móvil */
+  .nav-link-professional::before {
+    display: none;
+  }
+  
+  /* Optimizar para touch */
+  .nav-link-professional:active {
+    opacity: 0.7;
+    transition: opacity 0.1s ease;
+  }
+  
+  .button-professional:active {
+    opacity: 0.8;
+    transition: opacity 0.1s ease;
+  }
+  
+  /* Optimizaciones específicas para navegación móvil */
+  .nav-mobile {
+    transition: all 0.2s ease-out;
+  }
+  
+  .nav-mobile-item {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .nav-mobile-item:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+    transition: all 0.1s ease;
+    background: transparent !important;
+  }
+  
+  /* Sin efecto ripple - eliminado */
+  
+  /* Sin hover - eliminado completamente */
+  
+  /* Optimizar para touch en móvil */
+  .nav-mobile-item {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  
+  /* Transición suave para cambios de página */
+  .nav-mobile-item.active {
+    background: transparent !important;
+    transition: none !important;
+  }
+  
+  /* Estados de navegación */
+  .nav-mobile-item:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  
+  /* Mejorar el feedback visual */
+  .nav-mobile-item:not(:disabled):active {
+    background: transparent !important;
+    background-color: transparent !important;
+    transform: scale(0.95);
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  /* Sin transiciones para estado activo - inmediato */
+  .nav-mobile-item.active {
+    transition: none !important;
+  }
+  
+  /* Transición solo para cambios de estado */
+  .nav-mobile-item:not(.active) {
+    transition: background-color 0.1s ease, color 0.1s ease;
+  }
+  
+  /* Estado inactivo - sin efectos */
+  .nav-mobile-item:not(.active) {
+    background: transparent;
+    color: rgba(245, 245, 220, 0.6);
+  }
+  
+  /* Transición suave para el contenedor */
+  .nav-mobile {
+    will-change: transform;
+  }
+  
+  /* ===== OPTIMIZACIONES DE FORMULARIOS EN MÓVIL ===== */
+  
+  /* Reducir transiciones en móvil */
+  .form-input {
+    transition: opacity 0.1s ease, background-color 0.1s ease;
+  }
+  
+  .form-input:focus {
+    transform: none;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
+  }
+  
+  .form-input:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Labels más sutiles en móvil */
+  .form-label {
+    transition: color 0.1s ease;
+  }
+  
+  .form-label:hover {
+    transform: none;
+  }
+  
+  /* Botones optimizados para touch */
+  .form-button {
+    transition: opacity 0.1s ease, background-color 0.1s ease;
+  }
+  
+  .form-button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .form-button:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+    transition: all 0.1s ease;
+  }
+  
+  /* Desactivar efectos complejos en móvil */
+  .form-button::before {
+    display: none;
+  }
+  
+  /* Campos de formulario más simples */
+  .form-field {
+    transition: none;
+  }
+  
+  .form-field:hover {
+    transform: none;
+  }
+  
+  /* Grupos de formulario sin efectos */
+  .form-group {
+    transition: none;
+  }
+  
+  .form-group:hover {
+    transform: none;
+  }
+  
+  /* Selects optimizados para móvil */
+  .form-select {
+    transition: opacity 0.1s ease;
+  }
+  
+  .form-select:focus {
+    transform: none;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
+  }
+  
+  /* Textareas optimizadas */
+  .form-textarea {
+    transition: opacity 0.1s ease;
+  }
+  
+  .form-textarea:focus {
+    transform: none;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
+  }
+  
+  /* Optimizar para touch */
+  .form-input,
+  .form-select,
+  .form-textarea,
+  .form-button {
+    -webkit-tap-highlight-color: rgba(212, 175, 55, 0.1);
+    touch-action: manipulation;
+  }
+  
+  /* Desactivar todas las animaciones complejas en móvil */
+  .form-input,
+  .form-select,
+  .form-textarea,
+  .form-button,
+  .form-field,
+  .form-group,
+  .form-label {
+    animation: none !important;
+  }
+  
+  /* Solo mantener transiciones esenciales */
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    transition: box-shadow 0.1s ease;
+  }
+  
+  .form-button:active {
+    transition: opacity 0.05s ease, transform 0.05s ease;
+  }
+  
+  /* ===== OPTIMIZACIONES ULTRA-AGRESIVAS PARA SLOT SELECTOR EN MÓVIL ===== */
+  
+  /* ELIMINAR COMPLETAMENTE TODAS LAS TRANSICIONES EN MÓVIL */
+  .btn-barber {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .btn-barber:active {
+    opacity: 0.7;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .btn-barber:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  .button-professional {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .button-professional:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  .button-professional:active {
+    opacity: 0.7;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Desactivar TODAS las animaciones en elementos hijos */
+  .btn-barber * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ===== OPTIMIZACIONES PARA DISPOSITIVOS TÁCTILES ===== */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Dispositivos táctiles - sin hover */
+  .form-input:hover,
+  .form-select:hover,
+  .form-textarea:hover,
+  .form-button:hover,
+  .form-label:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+  }
+  
+  /* Solo efectos de focus y active */
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
+    transition: box-shadow 0.1s ease;
+  }
+  
+  .form-button:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+    transition: all 0.05s ease;
+  }
+  
+  /* Desactivar todos los efectos hover */
+  .form-input,
+  .form-select,
+  .form-textarea,
+  .form-button,
+  .form-field,
+  .form-group,
+  .form-label {
+    transition: none;
+  }
+  
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus,
+  .form-button:active {
+    transition: box-shadow 0.1s ease, opacity 0.05s ease, transform 0.05s ease;
+  }
+  
+  /* ===== SLOT SELECTOR ULTRA-OPTIMIZADO PARA TÁCTIL ===== */
+  
+  /* ELIMINAR COMPLETAMENTE TODAS LAS TRANSICIONES EN TÁCTIL */
+  .grid button {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .grid button:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    color: inherit !important;
+  }
+  
+  /* Active states SIN TRANSICIONES */
+  .grid button:active {
+    opacity: 0.6;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Focus states mínimos */
+  .grid button:focus {
+    outline: 1px solid rgba(212, 175, 55, 0.2);
+    outline-offset: 1px;
+  }
+  
+  /* Desactivar TODOS los efectos */
+  .grid button:not(:disabled):hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    color: inherit !important;
+  }
+  
+  /* Estados de selección */
+  .grid button:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  
+  /* Desactivar TODAS las animaciones en elementos hijos */
+  .grid button * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  /* Desactivar TODAS las transiciones en el contenedor */
+  .grid {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .grid * {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  /* ===== BOTONES PRINCIPALES EN DISPOSITIVOS TÁCTILES ===== */
+  
+  /* Botones de navegación y acción */
+  button:not(.grid button) {
+    transition: none !important;
+  }
+  
+  button:not(.grid button):hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    color: inherit !important;
+  }
+  
+  button:not(.grid button):active {
+    opacity: 0.8;
+    transform: scale(0.98);
+    transition: opacity 0.05s ease, transform 0.05s ease;
+  }
+  
+  /* Botones de formulario específicos */
+  .form-button {
+    transition: none !important;
+  }
+  
+  .form-button:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  .form-button:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+    transition: opacity 0.05s ease, transform 0.05s ease;
+  }
+  
+  /* ===== PROCESO DE RESERVA ULTRA-OPTIMIZADO PARA TÁCTIL ===== */
+  
+  /* Botones de reserva sin transiciones en táctil */
+  button[type="submit"],
+  button[type="button"] {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  button[type="submit"]:active,
+  button[type="button"]:active {
+    opacity: 0.7;
+    transform: scale(0.95);
+    transition: none !important;
+  }
+  
+  button[type="submit"]:hover,
+  button[type="button"]:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    color: inherit !important;
+  }
+  
+  /* Desactivar TODAS las animaciones en formularios */
+  form * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Spinner optimizado para táctil */
+  .animate-spin {
+    animation: spin 0.3s linear infinite !important;
+  }
+  
+  /* Estados de carga optimizados */
+  .animate-pulse {
+    animation: none !important;
+  }
+  
+  /* ===== OPTIMIZACIONES ULTRA-AGRESIVAS PARA BOTÓN AGENDAR CITA EN MÓVIL ===== */
+  
+  /* ELIMINAR COMPLETAMENTE TODAS LAS TRANSICIONES DEL BOTÓN */
+  .booking-button-mobile,
+  .booking-button-mobile *,
+  .booking-button-mobile::before,
+  .booking-button-mobile::after {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+  
+  /* Estados del botón SIN transiciones */
+  .booking-button-mobile:active,
+  .booking-button-mobile:focus,
+  .booking-button-mobile:hover,
+  .booking-button-mobile:visited {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    color: inherit !important;
+  }
+  
+  /* Eliminar TODAS las propiedades que pueden causar transiciones */
+  .booking-button-mobile {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+    backface-visibility: visible !important;
+    perspective: none !important;
+  }
+  
+  /* Forzar eliminación de cualquier transición heredada */
+  .booking-button-mobile,
+  .booking-button-mobile * {
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    transition-timing-function: linear !important;
+    transition-property: none !important;
+  }
+  
+  /* Eliminar animación del ícono dentro del botón */
+  .booking-button-mobile svg {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  /* Eliminar cualquier efecto de pulse en el ícono */
+  .booking-button-mobile .animate-pulse {
+    animation: none !important;
+  }
+  
+  /* ===== OPTIMIZACIONES ESPECÍFICAS SOLO PARA PÁGINA DE AGENDAR CITA ===== */
+  
+  /* Solo aplicar a la página de agendar cita en móvil */
+  .booking-page-mobile .btn-barber {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .booking-page-mobile .btn-barber:active {
+    opacity: 0.6;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .booking-page-mobile .btn-barber:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    color: inherit !important;
+  }
+  
+  .booking-page-mobile .button-professional {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .booking-page-mobile .button-professional:active {
+    opacity: 0.6;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .booking-page-mobile .button-professional:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    color: inherit !important;
+  }
+  
+  /* Desactivar TODAS las animaciones en elementos hijos solo en booking page */
+  .booking-page-mobile .btn-barber * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  /* Desactivar TODAS las transiciones en el contenedor solo en booking page */
+  .booking-page-mobile .grid {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .booking-page-mobile .grid * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ===== OPTIMIZACIONES ULTRA-AGRESIVAS PARA PANTALLAS PEQUEÑAS ===== */
+
+@media (max-width: 480px) {
+  /* ELIMINAR COMPLETAMENTE TODAS LAS TRANSICIONES EN PANTALLAS MUY PEQUEÑAS */
+  .grid button,
+  .grid button *,
+  .grid * {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .grid button:active {
+    opacity: 0.6;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .grid button:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    color: inherit !important;
+  }
+  
+  .grid button:focus {
+    outline: 1px solid rgba(212, 175, 55, 0.2);
+    outline-offset: 1px;
+  }
+  
+  .grid button:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  
+  /* ===== OPTIMIZACIONES PARA PROCESO DE RESERVA ===== */
+  
+  /* Botones de reserva ultra-optimizados para móvil */
+  button[type="submit"],
+  button[type="button"] {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  button[type="submit"]:active,
+  button[type="button"]:active {
+    opacity: 0.8;
+    transform: scale(0.95);
+    transition: none !important;
+  }
+  
+  button[type="submit"]:hover,
+  button[type="button"]:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Desactivar todas las animaciones en formularios */
+  form * {
+    animation: none !important;
+  }
+  
+  /* Optimizar el spinner de carga */
+  .animate-spin {
+    animation: spin 0.5s linear infinite !important;
+  }
+}
+
+
