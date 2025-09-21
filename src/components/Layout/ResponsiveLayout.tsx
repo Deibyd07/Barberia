@@ -39,19 +39,17 @@ const ResponsiveLayout: React.FC<ResponsiveLayoutProps> = ({ children }) => {
       
       {/* Contenido principal */}
       <main className="pb-0 md:pb-0">
-        {isMobile && user?.role !== 'admin' ? (
-          // Para cliente móvil, sin contenedor extra pero con padding top mínimo para el header
-          <div className="pt-12">
+        {isMobile ? (
+          // Para móvil (tanto admin como cliente), sin contenedor extra pero con padding top para el header
+          <div className="pt-16">
             {children}
           </div>
         ) : (
-          // Para admin o desktop, con contenedor
+          // Para desktop, con contenedor
           <div className="container-barber py-6">
-            {!isMobile && (
-              <div className="mb-6">
-                <Navigation />
-              </div>
-            )}
+            <div className="mb-6">
+              <Navigation />
+            </div>
             {children}
           </div>
         )}

@@ -150,7 +150,7 @@ const AdminDashboard: React.FC = () => {
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-barber-copper/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-barber-gold/5 to-transparent rounded-full animate-pulse-slow"></div>
       
-      <div className="container-barber py-2 sm:py-4 lg:py-8 px-2 sm:px-4 relative z-10">
+      <div className="py-2 sm:py-4 lg:py-8 px-2 sm:px-4 relative z-10">
         {/* Header */}
         <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 text-barber-gold mb-3 sm:mb-4 lg:mb-6 shadow-barber-xl border border-barber-gold/20 overflow-hidden animate-fade-in-up">
           <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
