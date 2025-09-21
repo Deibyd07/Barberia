@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+  SECRETS_SCAN_ENABLED = "false"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Redirecciones específicas para rutas de la aplicación
+[[redirects]]
+  from = "/admin"
+  to = "/admin/dashboard"
+  status = 301
+
+[[redirects]]
+  from = "/client"
+  to = "/client/dashboard"
+  status = 301
