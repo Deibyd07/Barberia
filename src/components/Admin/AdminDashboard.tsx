@@ -8,19 +8,9 @@ import pushNotificationService from '../../services/pushNotificationService';
 import { getTodayString, createLocalDate, isPastDate, isToday as isTodayDate, isFutureDate } from '../../utils/dateUtils';
 
 const BarberPole = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-spin-slow">
-    <rect x="18" y="6" width="12" height="36" rx="6" fill="#F8F6F2" stroke="#232323" strokeWidth="2"/>
-    <rect x="18" y="6" width="12" height="36" rx="6" fill="url(#stripes)" fillOpacity="0.5"/>
-    <ellipse cx="24" cy="6" rx="6" ry="3" fill="#C9A14A" />
-    <ellipse cx="24" cy="42" rx="6" ry="3" fill="#B87333" />
-    <defs>
-      <linearGradient id="stripes" x1="18" y1="6" x2="30" y2="42" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#C9A14A" />
-        <stop offset="0.5" stopColor="#B87333" />
-        <stop offset="1" stopColor="#232323" />
-      </linearGradient>
-    </defs>
-  </svg>
+  <div className="w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-b from-yellow-400 via-yellow-600 to-yellow-800 rounded-lg flex items-center justify-center">
+    <Crown className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
+  </div>
 );
 
 const AdminDashboard: React.FC = () => {
@@ -144,31 +134,29 @@ const AdminDashboard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-barber-midnight via-barber-charcoal to-barber-black font-barber relative overflow-hidden">
-      {/* Animated background elements */}
+      {/* Simplified background elements */}
       <div className="absolute inset-0 bg-barber-pattern opacity-5"></div>
-      <div className="absolute top-20 left-10 w-64 h-64 bg-barber-gold/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-barber-copper/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-barber-gold/5 to-transparent rounded-full animate-pulse-slow"></div>
+      <div className="absolute top-20 left-10 w-32 h-32 sm:w-64 sm:h-64 bg-barber-gold/5 rounded-full blur-2xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 sm:w-80 sm:h-80 bg-barber-copper/5 rounded-full blur-2xl"></div>
       
       <div className="py-2 sm:py-4 lg:py-8 px-2 sm:px-4 relative z-10">
         {/* Header */}
-        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 text-barber-gold mb-3 sm:mb-4 lg:mb-6 shadow-barber-xl border border-barber-gold/20 overflow-hidden animate-fade-in-up">
+        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 text-barber-gold mb-3 sm:mb-4 lg:mb-6 shadow-barber-xl border border-barber-gold/20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
           <div className="absolute top-2 right-2 sm:top-4 sm:right-4">
             <div className="flex space-x-1 sm:space-x-2">
-              <Crown className="h-4 w-4 sm:h-6 sm:w-6 text-barber-gold animate-pulse" />
-              <Star className="h-3 w-3 sm:h-5 sm:w-5 text-barber-copper animate-pulse" style={{ animationDelay: '0.5s' }} />
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-barber-gold animate-pulse" style={{ animationDelay: '1s' }} />
+              <Crown className="h-4 w-4 sm:h-6 sm:w-6 text-barber-gold" />
+              <Star className="h-3 w-3 sm:h-5 sm:w-5 text-barber-copper" />
+              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-barber-gold" />
             </div>
           </div>
           <div className="relative z-10 flex flex-col items-center justify-center gap-3 sm:gap-4 lg:gap-6">
             <div className="flex flex-col items-center space-y-3 sm:space-y-4 text-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-barber-gold/30 rounded-full blur-lg animate-glow"></div>
-                <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-gradient-to-br from-barber-gold/20 via-barber-copper/20 to-barber-bronze/20 backdrop-blur-md rounded-full border-2 border-barber-gold/50 shadow-neon-gold transform group-hover:scale-110 transition-all duration-300 animate-float">
+                <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center bg-gradient-to-br from-barber-gold/20 via-barber-copper/20 to-barber-bronze/20 backdrop-blur-md rounded-full border-2 border-barber-gold/50 shadow-neon-gold">
                   <BarberPole />
                   <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2">
-                    <Crown className="h-4 w-4 sm:h-6 sm:w-6 text-barber-gold animate-bounce-slow" />
+                    <Crown className="h-4 w-4 sm:h-6 sm:w-6 text-barber-gold" />
                   </div>
                 </div>
               </div>
@@ -179,11 +167,11 @@ const AdminDashboard: React.FC = () => {
                           </span>
                         </h1>
                 <div className="flex items-center justify-center space-x-1 sm:space-x-2">
-                  <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-barber-gold animate-pulse" />
+                  <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-barber-gold" />
                   <p className="text-barber-cream/90 text-xs sm:text-sm lg:text-base font-body">
                     Control total de tu barbería premium
                   </p>
-                  <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-barber-gold animate-pulse" style={{ animationDelay: '0.5s' }} />
+                  <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-barber-gold" />
                 </div>
               </div>
             </div>
@@ -191,30 +179,28 @@ const AdminDashboard: React.FC = () => {
         </div>
         
         {/* Stats Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 lg:mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 lg:mb-12">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
                   <div
                     key={index}
-                    className="group relative bg-gradient-to-br from-barber-black via-barber-dark to-barber-charcoal backdrop-blur-md rounded-lg sm:rounded-xl lg:rounded-2xl shadow-barber-xl p-3 sm:p-4 lg:p-6 border border-barber-gold/30 hover:shadow-neon-gold transition-all duration-500 transform hover:scale-105 animate-slide-in-left overflow-hidden"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                    className="group relative bg-gradient-to-br from-barber-black via-barber-dark to-barber-charcoal backdrop-blur-md rounded-lg sm:rounded-xl lg:rounded-2xl shadow-barber-xl p-3 sm:p-4 lg:p-6 border border-barber-gold/30 hover:shadow-neon-gold transition-all duration-300 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
                     <div className="absolute top-4 right-4">
-                      <Sparkles className="h-4 w-4 text-barber-gold/60 animate-pulse" />
+                      <Sparkles className="h-4 w-4 text-barber-gold/60" />
                     </div>
                     <div className="relative z-10">
                       <div className="flex items-center justify-between mb-4 sm:mb-6">
                         <div className="relative">
-                          <div className="absolute inset-0 bg-barber-gold/20 rounded-xl sm:rounded-2xl blur-lg animate-glow"></div>
                           <div className={`relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r ${stat.color} rounded-xl sm:rounded-2xl shadow-gold-glow transform group-hover:rotate-12 transition-all duration-300`}>
-                            <Icon className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-white group-hover:animate-bounce" />
+                            <Icon className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-white" />
                           </div>
                         </div>
                         <div className="text-right">
                           <div className="flex items-center space-x-1">
-                            <Star className="h-4 w-4 text-barber-gold animate-pulse" />
+                            <Star className="h-4 w-4 text-barber-gold" />
                             <span className="text-xs font-medium text-barber-gold/80 font-body uppercase tracking-wider">
                               Premium
                             </span>
@@ -229,7 +215,7 @@ const AdminDashboard: React.FC = () => {
                           {stat.title}
                         </p>
                         <div className="flex items-center space-x-2">
-                          <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${stat.changeType === 'positive' ? 'bg-green-400' : stat.changeType === 'negative' ? 'bg-red-400' : 'bg-barber-gold'} animate-pulse`}></div>
+                          <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${stat.changeType === 'positive' ? 'bg-green-400' : stat.changeType === 'negative' ? 'bg-red-400' : 'bg-barber-gold'}`}></div>
                           <p className={`text-xs sm:text-sm font-medium font-body ${stat.changeType === 'positive' ? 'text-green-400' : stat.changeType === 'negative' ? 'text-red-400' : 'text-barber-gold/80'}`}>
                             {stat.change}
                           </p>
@@ -242,7 +228,7 @@ const AdminDashboard: React.FC = () => {
             </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
 
           {/* Today's Appointments */}
           <div className="lg:col-span-3">
@@ -251,7 +237,7 @@ const AdminDashboard: React.FC = () => {
               <div className="relative z-10 p-6 border-b border-barber-gold/20 bg-gradient-to-r from-barber-gold/10 to-barber-copper/10">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
                   <div className="flex items-center space-x-3">
-                    <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-barber-gold to-barber-copper rounded-xl shadow-lg glow-gold animate-pulse-slow">
+                    <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-barber-gold to-barber-copper rounded-xl shadow-lg glow-gold">
                       <Crown className="h-5 w-5 text-barber-black" />
                     </div>
                     <h2 className="text-xl font-bold text-barber-cream font-barber">
@@ -272,7 +258,7 @@ const AdminDashboard: React.FC = () => {
                       />
                     </div>
                             <div className="flex items-center space-x-2">
-                              <Clock className="h-5 w-5 text-barber-gold animate-spin-slow" />
+                              <Clock className="h-5 w-5 text-barber-gold" />
                               <span className="text-sm text-barber-gold font-barber font-bold">
                                 {uniqueSelectedDateAppointments.length}
                               </span>
@@ -284,7 +270,7 @@ const AdminDashboard: React.FC = () => {
                 {uniqueSelectedDateAppointments.length === 0 ? (
                   <div className="text-center py-12">
                     <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-barber-gold/20 to-barber-copper/20 rounded-2xl mx-auto mb-4 border border-barber-gold/30">
-                      <Calendar className="h-8 w-8 text-barber-gold animate-pulse" />
+                      <Calendar className="h-8 w-8 text-barber-gold" />
                     </div>
                     <p className="text-barber-gold/80 text-sm font-barber">
                       {(() => {
@@ -363,7 +349,7 @@ const AdminDashboard: React.FC = () => {
                         >
                                   <div className="flex items-center justify-between mb-3">
                                     <div className="flex items-center space-x-2">
-                                      <Sparkles className="h-4 w-4 text-barber-cream/70 animate-pulse" />
+                                      <Sparkles className="h-4 w-4 text-barber-cream/70" />
                                       <span className="font-bold text-barber-white text-sm font-barber">
                                         {appointment.clientName}
                                       </span>
@@ -424,7 +410,7 @@ const AdminDashboard: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
               <div className="relative z-10 p-6">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-barber-gold to-barber-copper rounded-xl shadow-lg glow-gold animate-pulse-slow">
+                  <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-barber-gold to-barber-copper rounded-xl shadow-lg glow-gold">
                     <BarChart3 className="h-5 w-5 text-barber-black" />
                   </div>
                           <h3 className="text-xl font-bold text-barber-cream font-barber">
@@ -434,7 +420,7 @@ const AdminDashboard: React.FC = () => {
                 <div className="space-y-5">
                           <div className="flex items-center justify-between p-3 bg-barber-dark/30 rounded-xl border border-barber-gold/20">
                             <div className="flex items-center space-x-2">
-                              <CheckCircle className="h-4 w-4 text-emerald-400 animate-pulse" />
+                              <CheckCircle className="h-4 w-4 text-emerald-400" />
                               <span className="text-sm text-barber-cream/80 font-barber">Servicios completados</span>
                             </div>
                             <span className="font-bold text-barber-white font-barber text-lg">
@@ -443,7 +429,7 @@ const AdminDashboard: React.FC = () => {
                           </div>
                   <div className="flex items-center justify-between p-3 bg-barber-dark/30 rounded-xl border border-barber-gold/20">
                     <div className="flex items-center space-x-2">
-                      <Calendar className="h-4 w-4 text-blue-400 animate-pulse" />
+                      <Calendar className="h-4 w-4 text-blue-400" />
                       <span className="text-sm text-barber-cream/80 font-barber">Citas confirmadas</span>
                     </div>
                     <span className="font-bold text-barber-white font-barber text-lg">
@@ -452,7 +438,7 @@ const AdminDashboard: React.FC = () => {
                   </div>
                   <div className="flex items-center justify-between p-3 bg-barber-dark/30 rounded-xl border border-barber-gold/20">
                     <div className="flex items-center space-x-2">
-                      <DollarSign className="h-4 w-4 text-green-400 animate-pulse" />
+                      <DollarSign className="h-4 w-4 text-green-400" />
                       <span className="text-sm text-barber-cream/80 font-barber">Ingresos totales</span>
                     </div>
                     <span className="font-bold text-barber-white font-barber text-lg">
@@ -461,7 +447,7 @@ const AdminDashboard: React.FC = () => {
                   </div>
                   <div className="flex items-center justify-between p-3 bg-barber-dark/30 rounded-xl border border-barber-gold/20">
                     <div className="flex items-center space-x-2">
-                      <Users className="h-4 w-4 text-orange-400 animate-pulse" />
+                      <Users className="h-4 w-4 text-orange-400" />
                       <span className="text-sm text-barber-cream/80 font-barber">Clientes únicos</span>
                     </div>
                     <span className="font-bold text-barber-white font-barber text-lg">
@@ -491,7 +477,7 @@ const AdminDashboard: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
               <div className="relative z-10 p-6 border-b border-barber-gold/20 bg-gradient-to-r from-barber-gold/10 to-barber-copper/10">
                 <div className="flex items-center space-x-3">
-                  <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-barber-gold to-barber-copper rounded-xl shadow-lg glow-gold animate-pulse-slow">
+                  <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-barber-gold to-barber-copper rounded-xl shadow-lg glow-gold">
                     <CheckCircle className="h-5 w-5 text-barber-black" />
                   </div>
                           <h3 className="text-xl font-bold text-barber-cream font-barber">
@@ -511,7 +497,7 @@ const AdminDashboard: React.FC = () => {
                     >
                               <div className="flex items-center justify-between mb-3">
                                 <div className="flex items-center space-x-2">
-                                  <CheckCircle className="h-4 w-4 text-green-400 animate-pulse" />
+                                  <CheckCircle className="h-4 w-4 text-green-400" />
                                   <span className="font-bold text-barber-white text-sm font-barber">
                                     {appointment.clientName}
                                   </span>
