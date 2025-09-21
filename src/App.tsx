@@ -7,6 +7,8 @@ import ResponsiveLayout from './components/Layout/ResponsiveLayout';
 import AuthManager from './components/Auth/AuthManager';
 import ClientPages from './pages/ClientPages';
 import AdminPages from './pages/AdminPages';
+import ErrorBoundary from './components/Common/ErrorBoundary';
+import RouterFallback from './components/Common/RouterFallback';
 import './styles/barber-theme.css';
 import { initializeEmailService } from './utils/initializeEmail';
 
@@ -33,23 +35,27 @@ const AppContent: React.FC = () => {
   }
 
   return (
-    <ResponsiveLayout>
-      <Routes>
-        {user?.role === 'admin' ? (
-          <>
-            <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
-            <Route path="/admin/*" element={<AdminPages />} />
-            <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
-          </>
-        ) : (
-          <>
-            <Route path="/client" element={<Navigate to="/client/dashboard" replace />} />
-            <Route path="/client/*" element={<ClientPages />} />
-            <Route path="*" element={<Navigate to="/client/dashboard" replace />} />
-          </>
-        )}
-      </Routes>
-    </ResponsiveLayout>
+    <ErrorBoundary>
+      <ResponsiveLayout>
+        <Routes>
+          {user?.role === 'admin' ? (
+            <>
+              <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
+              <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
+              <Route path="/admin/*" element={<AdminPages />} />
+              <Route path="*" element={<RouterFallback />} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<Navigate to="/client/dashboard" replace />} />
+              <Route path="/client" element={<Navigate to="/client/dashboard" replace />} />
+              <Route path="/client/*" element={<ClientPages />} />
+              <Route path="*" element={<RouterFallback />} />
+            </>
+          )}
+        </Routes>
+      </ResponsiveLayout>
+    </ErrorBoundary>
   );
 };
 

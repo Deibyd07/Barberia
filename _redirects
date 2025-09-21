@@ -1,3 +1,10 @@
+# Redirecciones para SPA
 /*    /index.html   200
+
+# Redirecciones específicas
 /admin    /admin/dashboard    301
 /client    /client/dashboard    301
+
+# Redirecciones para rutas comunes
+/admin/    /admin/dashboard    301
+/client/    /client/dashboard    301
