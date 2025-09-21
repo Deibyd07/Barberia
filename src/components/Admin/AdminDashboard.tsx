@@ -123,9 +123,9 @@ const AdminDashboard: React.FC = () => {
       <div className="absolute top-20 left-10 w-32 h-32 sm:w-64 sm:h-64 bg-barber-gold/5 rounded-full blur-2xl"></div>
       <div className="absolute bottom-20 right-10 w-40 h-40 sm:w-80 sm:h-80 bg-barber-copper/5 rounded-full blur-2xl"></div>
       
-      <div className="py-4 sm:py-6 lg:py-8 px-4 sm:px-6 pb-16 sm:pb-20 relative z-10">
+      <div className="py-2 sm:py-4 lg:py-6 px-3 sm:px-4 lg:px-6 pb-20 sm:pb-24 relative z-10">
         {/* Header */}
-        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8 text-barber-gold mb-4 sm:mb-6 lg:mb-8 shadow-barber-xl border border-barber-gold/20 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-barber-dark/60 via-barber-slate/40 to-barber-charcoal/60 backdrop-blur-xl rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-4 sm:p-6 text-barber-gold mb-3 sm:mb-4 lg:mb-6 shadow-barber-xl border border-barber-gold/20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
           <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
             <div className="flex space-x-1 sm:space-x-2">
@@ -134,8 +134,8 @@ const AdminDashboard: React.FC = () => {
               <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-barber-gold" />
             </div>
           </div>
-          <div className="relative z-10 flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8">
-            <div className="flex flex-col items-center space-y-4 sm:space-y-6 text-center">
+          <div className="relative z-10 flex flex-col items-center justify-center gap-3 sm:gap-4 lg:gap-4 sm:p-6">
+            <div className="flex flex-col items-center space-y-3 sm:space-y-4 text-center">
               <div className="relative group">
                 <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 flex items-center justify-center bg-gradient-to-br from-barber-gold/20 via-barber-copper/20 to-barber-bronze/20 backdrop-blur-md rounded-full border-2 border-barber-gold/50 shadow-neon-gold">
                   <BarberPole />
@@ -163,23 +163,23 @@ const AdminDashboard: React.FC = () => {
         </div>
         
         {/* Stats Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 lg:mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-4 sm:p-6 mb-6 sm:mb-8 lg:mb-12">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
                   <div
                     key={index}
-                    className="group relative bg-gradient-to-br from-barber-black via-barber-dark to-barber-charcoal backdrop-blur-md rounded-lg sm:rounded-xl lg:rounded-2xl shadow-barber-xl p-4 sm:p-6 lg:p-8 border border-barber-gold/30 hover:shadow-neon-gold transition-all duration-300 overflow-hidden"
+                    className="group relative bg-gradient-to-br from-barber-black via-barber-dark to-barber-charcoal backdrop-blur-md rounded-lg sm:rounded-xl lg:rounded-2xl shadow-barber-xl p-3 sm:p-4 lg:p-4 sm:p-6 border border-barber-gold/30 hover:shadow-neon-gold transition-all duration-300 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
                     <div className="absolute top-4 right-4">
                       <Sparkles className="h-4 w-4 text-barber-gold/60" />
                     </div>
                     <div className="relative z-10">
-                      <div className="flex items-center justify-between mb-6 sm:mb-8">
+                      <div className="flex items-center justify-between mb-4 sm:mb-6">
                         <div className="relative">
-                          <div className={`relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 bg-gradient-to-r ${stat.color} rounded-xl sm:rounded-2xl shadow-gold-glow transform group-hover:rotate-12 transition-all duration-300`}>
-                            <Icon className="h-7 w-7 sm:h-8 sm:w-8 lg:h-9 lg:w-9 text-white" />
+                          <div className={`relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r ${stat.color} rounded-xl sm:rounded-2xl shadow-gold-glow transform group-hover:rotate-12 transition-all duration-300`}>
+                            <Icon className="h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 text-white" />
                           </div>
                         </div>
                         <div className="text-right">
@@ -192,15 +192,15 @@ const AdminDashboard: React.FC = () => {
                         </div>
                       </div>
                       <div>
-                        <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-display font-bold text-barber-gold mb-2 sm:mb-3 group-hover:text-barber-copper transition-colors duration-300">
+                        <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-display font-bold text-barber-gold mb-1 sm:mb-2 group-hover:text-barber-copper transition-colors duration-300">
                           {stat.value}
                         </p>
-                        <p className="text-sm sm:text-base lg:text-lg font-medium text-barber-cream mb-3 sm:mb-4 font-display">
+                        <p className="text-xs sm:text-sm lg:text-base font-medium text-barber-cream mb-2 sm:mb-3 font-display">
                           {stat.title}
                         </p>
                         <div className="flex items-center space-x-2">
-                          <div className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full ${stat.changeType === 'positive' ? 'bg-green-400' : stat.changeType === 'negative' ? 'bg-red-400' : 'bg-barber-gold'}`}></div>
-                          <p className={`text-sm sm:text-base font-medium font-body ${stat.changeType === 'positive' ? 'text-green-400' : stat.changeType === 'negative' ? 'text-red-400' : 'text-barber-gold/80'}`}>
+                          <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${stat.changeType === 'positive' ? 'bg-green-400' : stat.changeType === 'negative' ? 'bg-red-400' : 'bg-barber-gold'}`}></div>
+                          <p className={`text-xs sm:text-sm font-medium font-body ${stat.changeType === 'positive' ? 'text-green-400' : stat.changeType === 'negative' ? 'text-red-400' : 'text-barber-gold/80'}`}>
                             {stat.change}
                           </p>
                         </div>
@@ -212,13 +212,13 @@ const AdminDashboard: React.FC = () => {
             </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-4 sm:p-6">
 
           {/* Today's Appointments */}
           <div className="lg:col-span-3">
             <div className="relative bg-gradient-to-br from-barber-black via-barber-dark to-barber-black rounded-2xl shadow-2xl shadow-barber-gold/20 border border-barber-gold/30 glow-border overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
-              <div className="relative z-10 p-6 border-b border-barber-gold/20 bg-gradient-to-r from-barber-gold/10 to-barber-copper/10">
+              <div className="relative z-10 p-4 sm:p-6 border-b border-barber-gold/20 bg-gradient-to-r from-barber-gold/10 to-barber-copper/10">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
                   <div className="flex items-center space-x-3">
                     <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-barber-gold to-barber-copper rounded-xl shadow-lg glow-gold">
@@ -250,7 +250,7 @@ const AdminDashboard: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="relative z-10 p-6">
+              <div className="relative z-10 p-4 sm:p-6">
                 {uniqueSelectedDateAppointments.length === 0 ? (
                   <div className="text-center py-12">
                     <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-barber-gold/20 to-barber-copper/20 rounded-2xl mx-auto mb-4 border border-barber-gold/30">
@@ -392,7 +392,7 @@ const AdminDashboard: React.FC = () => {
             {/* Quick Stats */}
             <div className="mt-6 relative bg-gradient-to-br from-barber-black via-barber-dark to-barber-black rounded-2xl shadow-2xl shadow-barber-gold/20 border border-barber-gold/30 glow-border overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
-              <div className="relative z-10 p-6">
+              <div className="relative z-10 p-4 sm:p-6">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-barber-gold to-barber-copper rounded-xl shadow-lg glow-gold">
                     <BarChart3 className="h-5 w-5 text-barber-black" />
@@ -450,7 +450,7 @@ const AdminDashboard: React.FC = () => {
           <div className="mt-6 sm:mt-8 mb-16 sm:mb-20">
             <div className="relative bg-gradient-to-br from-barber-black via-barber-dark to-barber-black rounded-2xl shadow-2xl shadow-barber-gold/20 border border-barber-gold/30 glow-border overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-barber-gold/5 via-transparent to-barber-copper/5"></div>
-              <div className="relative z-10 p-6 border-b border-barber-gold/20 bg-gradient-to-r from-barber-gold/10 to-barber-copper/10">
+              <div className="relative z-10 p-4 sm:p-6 border-b border-barber-gold/20 bg-gradient-to-r from-barber-gold/10 to-barber-copper/10">
                 <div className="flex items-center space-x-3">
                   <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-barber-gold to-barber-copper rounded-xl shadow-lg glow-gold">
                     <CheckCircle className="h-5 w-5 text-barber-black" />
@@ -463,7 +463,7 @@ const AdminDashboard: React.FC = () => {
                   </span>
                 </div>
               </div>
-              <div className="relative z-10 p-6">
+              <div className="relative z-10 p-4 sm:p-6">
                 <div className="space-y-3">
                   {recentlyCompleted.slice(0, 5).map((appointment) => (
                     <div

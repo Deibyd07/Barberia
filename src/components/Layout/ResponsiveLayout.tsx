@@ -34,7 +34,7 @@ const ResponsiveLayout: React.FC<ResponsiveLayoutProps> = ({ children }) => {
       <main className="pb-0 md:pb-0">
         {isMobile ? (
           // Para móvil (tanto admin como cliente), sin contenedor extra pero con padding top para el header
-          <div className="pt-12">
+          <div className="pt-8">
             {children}
           </div>
         ) : (
